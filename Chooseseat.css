@@ -1,0 +1,246 @@
+body, h1, h2, h3, p, button, i, span, div, img { 
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f0f0;
+    min-height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.back-btn::before{
+    font-weight: bold;
+}
+
+.back-btn {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000000;
+    font-weight: bold;
+    font-size: 30px;
+    align-items: center;
+    font-family: 'Inter';
+    font-style: normal;
+    line-height: 36px;
+    text-align: right;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    letter-spacing: -0.408px;
+    gap: 20px;
+}
+
+/* Seat Icon in Header */
+.header .seat-icon {
+    justify-content: flex-start;
+    margin-left: 10px;
+}
+
+
+/* Screen Area */
+.screen-area img {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    margin-left: 400px;
+    z-index: 1;
+}
+
+/* Seats Layout */
+.seats-layout {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    width: 80%;
+    max-width: 700px;
+    margin-left: 60%; 
+    margin-right: 52%; 
+    margin-top: -190px;
+}
+
+.seat-blocks {
+    display: flex;
+    gap: 5px;
+    align-items: flex-start;
+}
+
+.row-label {
+    color: #9B3D3D;
+    font-family:'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 22px;
+    width: 20px;
+    text-align: center;
+}
+
+.seat-column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.row {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.row-a, .row-b {
+    width: calc(8 * (30px + 5px) + 20px); /* Lebar untuk 8 kursi + 1 label */
+}
+
+.row-c, .row-d, .row-e, .row-f, .row-g, .row-h, .row-i, .row-j {
+    width: calc(6 * (30px + 5px) + 20px); /* Lebar untuk 6 kursi + 1 label */
+}
+
+.aisle-horizontal {
+    height: 20px;
+    width: 100%;
+}
+
+.aisle-vertical {
+    width: 0px;
+}
+
+.seat {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 5px; 
+}
+
+.seat img {
+    width: 30px; 
+    height: 25px; 
+    pointer-events: none; 
+}
+
+/* Legend */
+.legend {
+    display: flex;
+    gap: 100px;
+    margin-bottom: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-seat {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    padding: 5px;
+}
+
+.legend-seat img {
+    width: 20px;
+    height: 20px;
+}
+
+.legend-item span {
+    font-size: 16px;
+    color: #000000;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+}
+
+/* Booking Info */
+.booking-info {
+    padding: 20px 30px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.seats-price {
+    display: flex;
+    flex-direction: column;
+    align-items: self-start;
+}
+
+.seats-count {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    opacity: 0.7;
+    margin-bottom: 5px;
+    font-family: 'Poppins', sans-serif; 
+}
+
+.total-price {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+
+.book-now-btn {
+    background: linear-gradient(270deg, #F03069 23.85%, #F8223C 77.72%, #FB6140 100.22%);
+    color: #ffffff;
+    border: none;
+    border-radius: 20px;
+    padding: 15px 40px;
+    cursor: pointer;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    justify-content: center;
+    width: 150px; 
+}
+
+.book-now-btn:hover {
+    opacity: 0.9;
+}

@@ -1,0 +1,162 @@
+/* Reset & Global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+  }
+  
+  .container {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background: linear-gradient(to right, #f77062, #fe5196);
+    color: white;
+    padding: 20px;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .logo {
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 15px;
+  }
+  
+  .sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .sidebar ul li a.active {
+    color: #38bdf8;
+  }
+  
+  /* Main Content */
+  .main-profile {
+    flex-grow: 1;
+    padding: 30px;
+  }
+  
+  /* Profil Header */
+  .profile-header {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+  }
+  
+  .profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .member-badge {
+    font-size: 14px;
+    color: #f59e0b;
+    margin-top: 5px;
+  }
+  
+  .profile-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  /* Tiket History */
+  .ticket-history {
+    margin-bottom: 30px;
+  }
+  
+  .ticket-item {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .film-title {
+    font-weight: bold;
+  }
+  
+  .status {
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .status.done {
+    background-color: #d1fae5;
+    color: #065f46;
+  }
+  
+  .status.pending {
+    background-color: #fef9c3;
+    color: #92400e;
+  }
+  
+  .status.cancel {
+    background-color: #fee2e2;
+    color: #991b1b;
+  }
+  
+  /* Newsletter */
+  .newsletter form {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .newsletter input {
+    flex-grow: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #cbd5e1;
+  }
+  
+  /* Responsif */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 90%;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .sidebar ul {
+      display: flex;
+      gap: 15px;
+    }
+  
+    .main-profile {
+      padding: 15px;
+    }
+  }
+  

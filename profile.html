@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profil | BioskopKu</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1 class="logo">CINEMA</h1>
+      <nav>
+        <ul>
+          <li><a href="home.html">Beranda</a></li>
+          <li><a href="Ticketdetail.html">Tiket Saya</a></li>
+          <li><a href="pagestar.html">Keluar</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-profile">
+      <!-- Header -->
+      <section class="profile-header">
+        <img src="gambar/profile.jpg" alt="Foto Profil" class="profile-img" />
+        <div>
+          <h2>Karina Espa</h2>
+          <p>karinaaespa@gmail.com</p>
+          <p class="member-badge">🎟️ Member Gold - 1.250 Poin</p>
+        </div>
+      </section>
+
+      <!-- Tiket History -->
+      <section class="ticket-history">
+        <h3>Riwayat Pemesanan</h3>
+
+        <div class="ticket-item">
+          <div>
+            <p class="film-title">Avengers: Endgame</p>
+            <p>Tanggal: 10 April 2025 - 19.00 WIB</p>
+            <p>Studio 3 - Kursi: C12, C13</p>
+          </div>
+          <span class="status done">Selesai</span>
+        </div>
+
+        <div class="ticket-item">
+          <div>
+            <p class="film-title">Dune: Part Two</p>
+            <p>Tanggal: 15 April 2025 - 20.30 WIB</p>
+            <p>Studio 1 - Kursi: A5</p>
+          </div>
+          <span class="status pending">Menunggu</span>
+        </div>
+
+        <div class="ticket-item">
+          <div>
+            <p class="film-title">The Batman</p>
+            <p>Tanggal: 5 Maret 2025 - 21.00 WIB</p>
+            <p>Studio 2 - Kursi: D7, D8</p>
+          </div>
+          <span class="status cancel">Dibatalkan</span>
+        </div>
+    </section>
+      <!-- Newsletter -->
+      <section class="newsletter">
+        <h3>Langganan Promo</h3>
+        <p>Dapatkan informasi film terbaru dan promo spesial!</p>
+        <form>
+          <input type="email" placeholder="Email kamu..." required />
+          <button type="submit" class="btn blue">Langganan</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
