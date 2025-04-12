@@ -225,23 +225,6 @@ body {
   flex-shrink: 0; 
 }
 
-.time-slot3 {
-  background: linear-gradient(90deg, #F03069 24%, #F8223C 78%, #FB6140 100%);
-  color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 0px;
-  padding: 10px 25px;
-  font-family: 'Inter';
-  font-style: normal;
-  font-size: 20px;
-  font-weight: 700;
-  line-height: 24px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  flex-grow: 0;
-  flex-shrink: 0;
-}
-
 .time-slot:hover {
   background-color: #ddd;
 }
