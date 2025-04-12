@@ -7,10 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
       slot.addEventListener('click', function() {
           timeSlots.forEach(btn => {
               btn.classList.remove('selected');
-              // Kembalikan style tombol yang bukan "time-slot3"
-              if (!btn.classList.contains('time-slot3')) {
-                  btn.style.background = '#B3B3B3';
-              }
+              btn.style.background = '#B3B3B3';
           });
 
           this.classList.add('selected');
