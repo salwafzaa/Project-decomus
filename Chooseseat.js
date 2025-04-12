@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedSeatsCount.textContent = `${count} Seats`;
         totalPriceValue.textContent = (count * seatPrice).toLocaleString('id-ID');
 
-        // tampilan tombol Book Now
         bookNowBtn.classList.toggle('disabled', count === 0);
         bookNowBtn.style.pointerEvents = count === 0 ? 'none' : 'auto';
         bookNowBtn.style.opacity = count === 0 ? 0.5 : 1;
@@ -20,30 +19,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     seats.forEach(seat => {
         seat.addEventListener('click', function() {
-            if (seat.classList.contains('available')) {
+            if (seat.classList.contains('available') || seat.classList.contains('selected')) {
+                const isSelecting = !seat.classList.contains('selected');
                 seat.classList.toggle('selected');
                 const imgElement = seat.querySelector('img');
                 if (imgElement) {
-                    if (seat.classList.contains('selected')) {
-                        imgElement.src = 'img/seatselected.png';
-                    } else {
-                        imgElement.src = seat.classList.contains('vip') ? 'img/seatvip.png' : 'img/seat.png';
-                        if (!seat.classList.contains('vip')) {
-                            imgElement.style.filter = '';
-                            imgElement.style.opacity = '';
-                        }
-                    }
-                }
-                updateBookingInfo();
-            } else if (seat.classList.contains('selected')) {
-                seat.classList.remove('selected');
-                const imgElement = seat.querySelector('img');
-                if (imgElement) {
-                    imgElement.src = seat.classList.contains('vip') ? 'img/seatvip.png' : 'img/seat.png';
-                    if (!seat.classList.contains('vip')) {
-                        imgElement.style.filter = '';
-                        imgElement.style.opacity = '';
-                    }
+                    imgElement.src = isSelecting ? 'img/seatselected.png' : (seat.classList.contains('vip') ? 'img/seatvip.png' : 'img/seat.png');
+                    imgElement.style.filter = '';
+                    imgElement.style.opacity = '';
                 }
                 updateBookingInfo();
             }
@@ -76,33 +59,27 @@ document.addEventListener('DOMContentLoaded', function() {
             const isInitiallyReserved = seat.classList.contains('reserved');
             const imgElement = seat.querySelector('img');
 
-            if (!isInitiallyReserved) {
-                if (reservedSeatCodes.includes(seatCode)) {
-                    seat.classList.remove('available', 'selected');
-                    seat.classList.add('reserved');
-                    seat.disabled = true;
-                    if (imgElement) {
-                        imgElement.src = 'img/seatreserved.png';
-                        imgElement.style.filter = 'grayscale(100%)';
-                        imgElement.style.opacity = '0.5';
-                    }
-                }
-                else if (!seat.classList.contains('available') && !seat.classList.contains('selected')) {
-                    seat.classList.add('available');
-                    seat.disabled = false;
-                    if (imgElement) {
-                        imgElement.src = seat.classList.contains('vip') ? 'img/seatvip.png' : 'img/seat.png';
-                        imgElement.style.filter = '';
-                        imgElement.style.opacity = '';
-                    }
-                }
-            } else {
+            if (isInitiallyReserved || reservedSeatCodes.includes(seatCode)) {
+                seat.classList.remove('available', 'selected');
+                seat.classList.add('reserved');
+                seat.disabled = true;
                 if (imgElement) {
                     imgElement.src = 'img/seatreserved.png';
                     imgElement.style.filter = 'grayscale(100%)';
                     imgElement.style.opacity = '0.5';
                 }
-                seat.disabled = true;
+            } else if (!seat.classList.contains('reserved')) {
+                seat.classList.add('available');
+                seat.disabled = false;
+                if (imgElement && !seat.classList.contains('vip')) {
+                    imgElement.src = 'img/seat.png';
+                    imgElement.style.filter = '';
+                    imgElement.style.opacity = '';
+                } else if (imgElement && seat.classList.contains('vip')) {
+                    imgElement.src = 'img/seatvip.png';
+                    imgElement.style.filter = '';
+                    imgElement.style.opacity = '';
+                }
             }
         });
     }
